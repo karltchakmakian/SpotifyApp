@@ -64,9 +64,10 @@ def home(request):
         artist_id = result["id"]
         songs = get_songs_by_artist(token, artist_id)
         counter = 0
-        final_songs = songs[0]['name'] + "\n" + songs[1]['name'] + "\n" + songs[2]['name'] + "\n" + songs[3]['name'] + "\n" + songs[4]['name'] + "\n" + songs[5]['name'] + "\n" + songs[6]['name'] + "\n" + songs[7]['name'] + "\n" + songs[8]['name'] + "\n" + songs[9]['name']
+        final_songs = songs[0]['name'] + "<br/>" + songs[1]['name'] + "<br/>" + songs[2]['name'] + "<br/>" + songs[3]['name'] + "<br/>" + songs[4]['name'] + "<br/>" + songs[5]['name'] + "<br/>" + songs[6]['name'] + "<br/>" + songs[7]['name'] + "<br/>" + songs[8]['name'] + "<br/>" + songs[9]['name']
         
-        return HttpResponse(final_songs, content_type="text/plain")
+        return HttpResponse(final_songs)
+        #return HttpResponse(final_songs, content_type="text/html")
     
     return render(request, "myapp/home.html")
         
